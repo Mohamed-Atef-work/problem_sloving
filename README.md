@@ -1,1 +1,1 @@
-A repository of the problems i solve regularly using dart.
+A repository of the problems I solve regularly using dart.
