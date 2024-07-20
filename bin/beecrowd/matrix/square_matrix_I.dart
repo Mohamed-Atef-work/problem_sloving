@@ -41,10 +41,10 @@ Sample Input	Sample Output
 
 import 'dart:io';
 
-void squareMatrix() {
+void squareMatrixI() {
   List<int> matrixLengths = userInput();
 
-  for (int n = 0; n < matrixLengths.length; n++) {
+  for (int n in matrixLengths) {
     List<List<int>> matrix = createMatrix(n);
     printMatrix(matrix);
   }
@@ -94,48 +94,3 @@ void printMatrix(List<List<int>> matrix) {
 
   print("");
 }
-
-
-/*
-* import 'dart:io';
-
-void main()
-{
-List<int> nS = [];
-  int input;
-  do {
-    input = int.parse(stdin.readLineSync()!);
-    nS.add(input);
-  } while (input != 0);
-
-  for (int n = 0; n < nS.length; n++) {
-    final nList = List.generate(n, (index) => 0);
-    List<List<int>> mat = List.generate(n, (index) => [...nList]);
-
-    final levels = (n / 2 + 0.5) ~/ 1;
-
-    for (int level = 0; level < levels; level++) {
-      for (int column = level; column < n - level; column++) {
-        // topLeft to right
-        mat[level][column] = level + 1;
-        // topLeft to down
-        mat[column][level] = level + 1;
-        // bottomLeft to right
-        mat[n - 1 - level][column] = level + 1;
-        // topRight to down
-        mat[column][n - 1 - level] = level + 1;
-      }
-    }
-
-  String list = "";
-  for (List row in mat) {
-    for (int element in row) {
-      list += "   $element";
-    }
-    print(list);
-    list = "";
-  }
-
-  print("");
-  }}
-*/
