@@ -1,6 +1,7 @@
 import 'package:args/args.dart';
 
 import 'beecrowd/loops/below_the_main_diagonal.dart';
+import 'beecrowd/matrix/array_1_2_3.dart';
 import 'beecrowd/matrix/square_matrix_I.dart';
 import 'beecrowd/matrix/square_matrix_II.dart';
 import 'consumption.dart';
@@ -15,7 +16,8 @@ import 'dart:io';
 const String version = '0.0.1';
 
 void main() {
-  squareMatrixI();
+
+  array123();
 }
 /*{
   List<int> nS = [];
