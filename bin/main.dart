@@ -4,6 +4,8 @@ import 'beecrowd/loops/below_the_main_diagonal.dart';
 import 'beecrowd/matrix/array_1_2_3.dart';
 import 'beecrowd/matrix/square_matrix_I.dart';
 import 'beecrowd/matrix/square_matrix_II.dart';
+import 'beecrowd/matrix/square_matrix_III.dart';
+import 'beecrowd/summing_consecutive_integers.dart';
 import 'consumption.dart';
 import 'beecrowd/coordinates.dart';
 import 'beecrowd/exceeding_z.dart';
@@ -16,7 +18,6 @@ import 'dart:io';
 const String version = '0.0.1';
 
 void main() {
-
   array123();
 }
 /*{

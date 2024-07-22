@@ -38,7 +38,7 @@ void squareMatrixII() {
   }
 }
 
-void squareMatrixIII() {
+void squareMatrixIIII() {
   int n;
   do {
     n = int.parse(stdin.readLineSync()!);
