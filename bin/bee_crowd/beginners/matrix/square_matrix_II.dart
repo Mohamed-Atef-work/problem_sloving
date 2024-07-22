@@ -25,16 +25,18 @@ void squareMatrixII() {
 
     String matrixRow = "";
     for (List row in mat) {
-      for (int i in row) {
-        matrixRow += "  $i";
+      for (int column = 0; column < mat.length; column++) {
+        if (column != 0) {
+          matrixRow += "   ${row[column]}";
+        } else {
+          matrixRow += "  ${row[column]}";
+        }
       }
       print(matrixRow);
       matrixRow = "";
     }
-    if (nS[i] != nS[nS.length - 2]) {
       print("");
-      print("-----------------------> ${nS[i]}");
-    }
+
   }
 }
 
