@@ -70,7 +70,6 @@ int getMoves(List<List<int>> points) {
   } else if (position.first == goal.first || position.last == goal.last) {
     return 1;
   } else if (sameDiameter(position, goal)) {
-    print("same");
     return 1;
   } else {
     return 2;
@@ -78,59 +77,85 @@ int getMoves(List<List<int>> points) {
 }
 
 bool sameDiameter(List<int> position, List<int> goal) {
-  bool isSame = false;
+  final one = topRight(position, goal);
+  final two = topLeft(position, goal);
+  final three = bottomRight(position, goal);
+  final four = bottomLeft(position, goal);
+
+  if (one) {
+    return one;
+  } else if (two) {
+    return two;
+  } else if (three) {
+    return three;
+  } else {
+    return four;
+  }
+}
+
+bool topRight(List<int> position, List<int> goal) {
   int positionRow = position.first;
   int positionColumn = position.last;
-  // topRight
+
   for (int range = 0; range < 8; range++) {
     positionRow--;
     positionColumn++;
     if (positionRow == goal.first && positionColumn == goal.last) {
-      isSame = true;
+      return true;
     }
     if (positionRow == 1 || positionColumn == 8) {
-      break;
+      return false;
     }
   }
-  // topLeft
+  return false;
+}
+
+bool topLeft(List<int> position, List<int> goal) {
+  int positionRow = position.first;
+  int positionColumn = position.last;
   for (int range = 0; range < 8; range++) {
-    int positionRow = position.first;
-    int positionColumn = position.last;
     positionRow--;
     positionColumn--;
     if (positionRow == goal.first && positionColumn == goal.last) {
-      isSame = true;
+      return true;
     }
     if (positionRow == 1 || positionColumn == 1) {
-      break;
+      return false;
     }
   }
-  // bottomRight
+  return false;
+}
+
+bool bottomRight(List<int> position, List<int> goal) {
+  int positionRow = position.first;
+  int positionColumn = position.last;
+
   for (int range = 0; range < 8; range++) {
-    int positionRow = position.first;
-    int positionColumn = position.last;
     positionRow++;
     positionColumn++;
     if (positionRow == goal.first && positionColumn == goal.last) {
-      isSame = true;
+      return true;
     }
     if (positionRow == 8 || positionColumn == 8) {
-      break;
+      return false;
     }
   }
-  // bottomLeft
+  return false;
+}
+
+bool bottomLeft(List<int> position, List<int> goal) {
+  int positionRow = position.first;
+  int positionColumn = position.last;
+
   for (int range = 0; range < 8; range++) {
-    int positionRow = position.first;
-    int positionColumn = position.last;
     positionRow++;
     positionColumn--;
     if (positionRow == goal.first && positionColumn == goal.last) {
-      isSame = true;
+      return true;
     }
     if (positionRow == 8 || positionColumn == 1) {
-      break;
+      return false;
     }
   }
-
-  return isSame;
+  return false;
 }
