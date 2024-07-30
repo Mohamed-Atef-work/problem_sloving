@@ -33,9 +33,9 @@ Input Sample	Output Sample
 import 'dart:io';
 
 void numberFrequency() {
-  final List<int> numbers = input();
-  final List<int> noRepeated = removeRepeated(numbers);
-  final List<int> sorted = sort(noRepeated);
+  final numbers = input();
+  final noRepeated = removeRepeated(numbers);
+  final sorted = sort(noRepeated);
   frequency(numbers, sorted);
   print(numbers);
   print(noRepeated);
